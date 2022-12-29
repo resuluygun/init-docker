@@ -6,6 +6,6 @@ RUN go mod init
 RUN go build main.go
 
 FROM alpine
-COPY --from=builder /go/src/app/main /go/src/app/main
+COPY --from=builder /go/src/app /go/src/app
 
-CMD ["./main"]
+CMD ["./go/src/app/main"]
